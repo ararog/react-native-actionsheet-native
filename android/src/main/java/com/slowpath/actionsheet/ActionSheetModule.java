@@ -20,6 +20,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 import com.baoyz.actionsheet.ActionSheet;
 
+
 public class ActionSheetModule extends ReactContextBaseJavaModule implements ActionSheet.ActionSheetListener {
 
     private static final String MODULE_NAME = "ActionSheetAndroid";
@@ -27,10 +28,10 @@ public class ActionSheetModule extends ReactContextBaseJavaModule implements Act
     private Callback _callback;
     private ReactApplicationContext _context;
 
-    public ActionSheetModule(ReactApplicationContext reactContext, FragmentActivity activity) {
+    public ActionSheetModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this._context = reactContext;
-        this._activity = activity;
+        this._activity = getCurrentActivity();
         this._callback = null;
     }
 
@@ -77,5 +78,4 @@ public class ActionSheetModule extends ReactContextBaseJavaModule implements Act
         _callback.invoke(-1);
       }
     }
-
   }

@@ -16,17 +16,15 @@ import java.util.List;
 import com.slowpath.actionsheet.ActionSheetModule;
 
 public class ActionSheetPackage implements ReactPackage {
-    private FragmentActivity _activity;
 
-    public ActionSheetPackage(FragmentActivity activity) {
+    public ActionSheetPackage() {
       super();
-      _activity = activity;
     }
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
-        modules.add(new ActionSheetModule(reactContext, _activity));
+        modules.add(new ActionSheetModule(reactContext));
         return modules;
     }
 

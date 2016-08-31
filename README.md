@@ -4,7 +4,7 @@ React Native ActionSheet is a JavaScript library for [React Native](https://face
 To implement the Android version I used [android-ActionSheet](https://github.com/baoyongzhang/android-ActionSheet).
 
 ## Requirements
-* React Native >= 0.21.0
+* React Native >= 0.29.0
 * Android
 
 ## Installing React Native ActionSheet
@@ -30,23 +30,23 @@ dependencies {
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:23.0.1"
     compile "com.facebook.react:react-native:+"
-    compile project(":react-native-actionsheet") // <--- add this
+    compile project(":react-native-actionsheet-native") // <--- add this
 }
 ```
 
-* Register Module (in MainActivity.java)
+* Register Module (in MainApplication.java)
 
 ```java
 import com.slowpath.actionsheet.ActionSheetModule;   // <--- import this
 import com.slowpath.actionsheet.ActionSheetPackage;  // <--- import and this
 
-public class MainActivity extends ReactActivity {
+public class MainApplication extends Application implements ReactApplication {
   ......
 
   @Override
   protected List<ReactPackage> getPackages() {
     return Arrays.<ReactPackage>asList(
-      new ActionSheetPackage(this), // <------ add this line to yout MainActivity class
+      new ActionSheetPackage(), // <------ add this line to yout MainApplication class
       new MainReactPackage());
   }
 
