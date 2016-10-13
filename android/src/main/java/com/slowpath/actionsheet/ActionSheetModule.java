@@ -31,7 +31,7 @@ public class ActionSheetModule extends ReactContextBaseJavaModule implements Act
     public ActionSheetModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this._context = reactContext;
-        this._activity = getCurrentActivity();
+        this._activity = (FragmentActivity) getCurrentActivity();
         this._callback = null;
     }
 
